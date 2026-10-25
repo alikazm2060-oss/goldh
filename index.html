@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090b10">
+  <title>علي الذهب لبث المباريات</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090b10;
+      --panel: #121722;
+      --panel2: #171e2b;
+      --gold: #e5bd55;
+      --gold2: #f7df91;
+      --muted: #a9b1c1;
+      --line: rgba(229,189,85,.24);
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      margin: 0; min-height: 100vh; color: #f8f8fb;
+      background:
+        radial-gradient(ellipse at 85% 0%, rgba(229,189,85,.12), transparent 36%),
+        radial-gradient(ellipse at 0% 45%, rgba(42,78,130,.12), transparent 38%),
+        var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Arial, sans-serif;
+    }
+    .site-header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(9,11,16,.88);
+      backdrop-filter: blur(16px);
+      position: relative; z-index: 1;
+    }
+    .header-inner {
+      width: min(1180px, 100%); margin: auto; padding: 18px 20px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .brand-mark {
+      width: 52px; height: 52px; flex: 0 0 52px; border-radius: 17px;
+      display: grid; place-items: center; color: #17130a;
+      background: linear-gradient(145deg, var(--gold2), #b88724);
+      box-shadow: 0 8px 28px rgba(229,189,85,.2);
+      font-size: 25px; font-weight: 900;
+    }
+    .brand-name { margin: 0; font-size: clamp(18px, 3vw, 25px); font-weight: 850; letter-spacing: -.4px; }
+    .brand-sub { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
+    .live-pill {
+      margin-right: auto; display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 11px; border-radius: 999px; color: var(--gold2);
+      background: rgba(229,189,85,.09); border: 1px solid var(--line);
+      font-size: 12px; white-space: nowrap;
+    }
+    .live-dot { width: 7px; height: 7px; border-radius: 50%; background: #f05a62; box-shadow: 0 0 12px #f05a62; }
+    main { width: min(1180px, 100%); margin: auto; padding: 28px 20px 48px; }
+    .hero { margin-bottom: 24px; }
+    .eyebrow { color: var(--gold); font-size: 12px; font-weight: 800; letter-spacing: 1.5px; }
+    h1 { margin: 9px 0 10px; font-size: clamp(25px, 5vw, 42px); line-height: 1.25; }
+    .hero p { margin: 0; color: var(--muted); line-height: 1.9; max-width: 720px; font-size: 14px; }
+    .player-card {
+      border: 1px solid var(--line); border-radius: 22px; overflow: hidden;
+      background: linear-gradient(180deg, rgba(23,30,43,.96), rgba(14,18,27,.98));
+      box-shadow: 0 22px 65px rgba(0,0,0,.3);
+    }
+    .player-top {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 16px 18px; border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .player-title { margin: 0; font-size: 15px; font-weight: 800; }
+    .player-status { color: var(--muted); font-size: 12px; margin-top: 4px; }
+    .screen-wrap { padding: 12px; }
+    .screen {
+      position: relative; width: 100%; aspect-ratio: 16 / 9; min-height: 190px;
+      background: #030405; overflow: hidden; border-radius: 14px;
+    }
+    iframe { width: 100%; height: 100%; display: block; border: 0; background: #030405; }
+    .screen:fullscreen { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; }
+    .screen:fullscreen iframe { width: 100%; height: 100%; }
+    .screen:-webkit-full-screen { width: 100%; height: 100%; }
+    .screen:-webkit-full-screen iframe { width: 100%; height: 100%; }
+    .controls {
+      padding: 2px 18px 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    }
+    button, select {
+      min-height: 44px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1);
+      background: #202838; color: #fff; padding: 0 15px; font: inherit; font-size: 13px;
+    }
+    button { cursor: pointer; font-weight: 750; transition: transform .15s, border-color .15s, background .15s; }
+    button:hover { border-color: var(--gold); background: #293346; }
+    button:active { transform: scale(.98); }
+    .primary { color: #181306; background: linear-gradient(135deg, var(--gold2), #c79630); border: 0; }
+    .primary:hover { background: linear-gradient(135deg, #ffe9a5, #d7a63d); }
+    select { cursor: pointer; }
+    .note {
+      margin: 0 18px 18px; border: 1px solid rgba(255,255,255,.07);
+      border-radius: 12px; padding: 12px 14px; color: var(--muted);
+      background: rgba(255,255,255,.025); font-size: 12px; line-height: 1.9;
+    }
+    .note strong { color: var(--gold2); }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
+    .feature {
+      padding: 16px; border-radius: 16px; border: 1px solid rgba(255,255,255,.07);
+      background: rgba(18,23,34,.75);
+    }
+    .feature-icon { font-size: 20px; }
+    .feature h3 { font-size: 13px; margin: 9px 0 6px; }
+    .feature p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    footer { text-align: center; padding: 22px 15px 30px; border-top: 1px solid rgba(255,255,255,.06); color: #858d9d; font-size: 12px; line-height: 1.9; }
+    footer strong { color: var(--gold); }
+    @media (max-width: 640px) {
+      .header-inner { padding: 14px; gap: 10px; }
+      .brand-mark { width: 44px; height: 44px; flex-basis: 44px; border-radius: 14px; }
+      .brand-sub { font-size: 11px; }
+      .live-pill { padding: 7px 8px; font-size: 10px; }
+      main { padding: 23px 12px 34px; }
+      .player-card { border-radius: 17px; }
+      .player-top { padding: 14px; }
+      .screen-wrap { padding: 8px; }
+      .screen { border-radius: 10px; min-height: 170px; }
+      .controls { padding: 2px 10px 13px; gap: 8px; }
+      button, select { flex: 1 1 calc(50% - 8px); padding: 0 9px; font-size: 12px; }
+      .note { margin: 0 10px 12px; }
+      .feature-grid { grid-template-columns: 1fr; gap: 9px; }
+      .feature { display: flex; align-items: flex-start; gap: 12px; }
+      .feature h3 { margin-top: 1px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-mark" aria-hidden="true">ع</div>
+      <div>
+        <p class="brand-name">علي الذهب لبث المباريات</p>
+        <p class="brand-sub">تجربة مشاهدة أنيقة وبسيطة</p>
+      </div>
+      <div class="live-pill"><span class="live-dot"></span> مشغل البث</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">ALI AL-DHAHAB • LIVE PLAYER</div>
+      <h1>المباراة تبدأ من هنا</h1>
+      <p>شغّل البث داخل المشغّل، وكبّر الشاشة حتى تستمتع بالمشاهدة. تصميم متجاوب للآيفون والحاسبة.</p>
+    </section>
+
+    <section class="player-card" aria-label="مشغل البث">
+      <div class="player-top">
+        <div>
+          <h2 class="player-title">مشغل المباريات</h2>
+          <div class="player-status" id="status">إذا لم يبدأ البث، جرّب إعادة تحميل المشغّل.</div>
+        </div>
+        <div class="live-pill"><span class="live-dot"></span> LIVE</div>
+      </div>
+
+      <div class="screen-wrap">
+        <div class="screen" id="screen">
+          <iframe
+            id="stream"
+            title="بث المباريات"
+            src="https://912acsss8af382.sirtv.top/playerv5.php?match=4742022&amp;key=9f39972b67d6ce22189507d008acwc26"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            scrolling="no"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="primary" type="button" id="fullscreenBtn">⛶ تكبير الشاشة</button>
+        <button type="button" id="reloadBtn">↻ إعادة تحميل البث</button>
+        <select id="quality" aria-label="معلومات الدقة">
+          <option value="">الدقة من المشغّل الأصلي</option>
+          <option value="360p">360p</option>
+          <option value="480p">480p</option>
+          <option value="720p">720p HD</option>
+          <option value="1080p">1080p Full HD</option>
+        </select>
+      </div>
+
+      <p class="note" id="qualityNote"><strong>تنبيه:</strong> اختيار الدقة من هذه القائمة لا يغيّر جودة البث تلقائياً؛ استخدم إعدادات الجودة داخل المشغّل الأصلي إن كانت موجودة.</p>
+    </section>
+
+    <section class="feature-grid" aria-label="مميزات الموقع">
+      <article class="feature">
+        <div class="feature-icon">⛶</div>
+        <div><h3>شاشة كاملة</h3><p>وسّع المشغّل لملء الشاشة من الزر المخصص.</p></div>
+      </article>
+      <article class="feature">
+        <div class="feature-icon">⚙</div>
+        <div><h3>خيارات العرض</h3><p>خيارات الدقة الفعلية تعتمد على ما يوفره مصدر البث.</p></div>
+      </article>
+      <article class="feature">
+        <div class="feature-icon">◈</div>
+        <div><h3>تصميم متجاوب</h3><p>واجهة داكنة ولمسات ذهبية تناسب الهاتف والحاسبة.</p></div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <strong>علي الذهب لبث المباريات</strong><br>
+    هذا الموقع واجهة لتضمين مصدر البث الذي زوّدني به المستخدم.
+  </footer>
+
+  <script>
+    const screenEl = document.getElementById('screen');
+    const frame = document.getElementById('stream');
+    const statusEl = document.getElementById('status');
+
+    document.getElementById('fullscreenBtn').addEventListener('click', async () => {
+      try {
+        if (document.fullscreenElement || document.webkitFullscreenElement) {
+          if (document.exitFullscreen) await document.exitFullscreen();
+          else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+          return;
+        }
+        if (screenEl.requestFullscreen) await screenEl.requestFullscreen();
+        else if (screenEl.webkitRequestFullscreen) screenEl.webkitRequestFullscreen();
+        else statusEl.textContent = 'قد لا يدعم هذا المتصفح ملء الشاشة لهذا المشغّل.';
+      } catch (_) {
+        statusEl.textContent = 'تعذّر تكبير الشاشة. جرّب فتح الصفحة في Safari.';
+      }
+    });
+
+    document.getElementById('reloadBtn').addEventListener('click', () => {
+      statusEl.textContent = 'جارٍ إعادة تحميل المشغّل…';
+      frame.src = frame.src;
+    });
+
+    document.getElementById('quality').addEventListener('change', (event) => {
+      const quality = event.target.value;
+      const note = document.getElementById('qualityNote');
+      note.innerHTML = quality
+        ? '<strong>ملاحظة:</strong> اختيار ' + quality + ' هنا لا يفرض الدقة على المصدر. افتح إعدادات الجودة داخل مشغّل البث إذا كانت متاحة.'
+        : '<strong>تنبيه:</strong> اختيار الدقة من هذه القائمة لا يغيّر جودة البث تلقائياً؛ استخدم إعدادات الجودة داخل المشغّل الأصلي إن كانت موجودة.';
+    });
+
+    // الصفحة لا تنشئ نوافذ منبثقة ولا تفتح روابط إضافية بنفسها.
+    // لا يمكن منع النوافذ التي يطلقها مصدر البث من داخل iframe بشكل مضمون بسبب قيود المتصفح والأمان.
+  </script>
+</body>
+</html>
